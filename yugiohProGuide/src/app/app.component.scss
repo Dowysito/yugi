@@ -1,0 +1,21 @@
+*{
+  font-family: 'Sriracha', cursive;
+}
+ion-list{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: white;
+}
+ion-content{
+  height: 98%;
+}
+.split-pane-md{
+    --border: 4px solid var(--ion-item-border-color,var(--ion-border-color,var(--ion-color-step-150,rgba(0,0,0,0.13))));
+}
+.split-pane-md.split-pane-visible>.split-pane-side{
+  max-width: 15%;
+}
+.toolbar-title{
+  text-align: center;
+}
+

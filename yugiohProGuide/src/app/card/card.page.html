@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Card
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let card of card; let i = index" color="dark">
+      <div class="header">
+          <ion-img class="img" [src]='card.card_images[0].image_url'></ion-img>
+      </div>
+      <div class="body">
+          <h3>
+              {{card.name}}
+          </h3>
+          <h4>
+              {{card.race}} {{card.type}}
+          </h4>
+          <h4 class="lvl" *ngIf="monster()">
+              {{card.level}} <img class="star" src="../../assets/star.png">
+          </h4>
+          <h4 *ngIf="monster()">
+              Attribute {{card.attribute}}
+          </h4>
+          <div>
+              {{card.desc}}
+          </div>
+      </div>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

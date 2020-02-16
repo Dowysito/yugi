@@ -1,0 +1,102 @@
+*{
+  font-family: 'Sriracha', cursive;
+}
+input[type="file"] {
+  display: none;
+}
+
+h1{
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  background-color: #F04141;
+}
+.grid-container {
+  display: grid;
+  height: 90vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "card main main main" "card main main main" "desc extra extra extra" "desc side side side";
+}
+
+#result {
+  height: 100vh;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+}
+
+.card{
+  grid-area: card;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+
+.gran{
+  width: 70%;
+}
+
+.global{
+  background-color: rgb(34,36,40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chica {
+  width: 4.5%;
+}
+.name{
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 4%;
+  padding-left: 4%;
+  background-color: white;
+  padding-bottom: 4%;
+  grid-area: desc;
+  overflow-y: scroll;
+}
+
+.side {
+  background-color: grey;
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+}
+
+.extra {
+  background-color: grey;
+  grid-area: extra;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardcont{
+  display: flex;
+  flex-wrap: wrap;
+}

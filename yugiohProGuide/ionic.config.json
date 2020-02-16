@@ -1,0 +1,7 @@
+{
+  "name": "yugiohProGuide",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

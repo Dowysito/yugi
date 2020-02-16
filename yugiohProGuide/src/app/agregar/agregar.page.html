@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Agregar Carta
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<div class="busc">
+  <ion-item>
+    <ion-searchbar
+            #buscador
+            placeholder="Search Cards"
+            searchIcon="false"
+            (ionChange)="search(buscador.value)">
+    </ion-searchbar>
+    <ion-buttons>
+      <ion-button align-self-end (click)="search(buscador.value)">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</div>
+<ion-content color="light">
+  <ion-list color="dark">
+    <ion-item *ngIf="cards.length==0">
+      <h3>No cards</h3>
+    </ion-item>
+    <ion-item *ngFor="let card of cardsloaded; let i = index" (click)="add(card.id)">
+      <ion-img [src]="card.card_images[0].image_url_small"></ion-img>
+      <h3>{{card.name}}</h3>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more cards...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

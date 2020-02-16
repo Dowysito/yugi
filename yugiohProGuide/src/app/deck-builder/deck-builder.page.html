@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="maincards.length!=0" (click)="export()">Export</ion-button>
+      <ion-button *ngIf="maincards.length!=0" (click)="add()">Add</ion-button>
+    </ion-buttons>
+    <ion-title>
+      Deck Builder
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="global">
+  <label class="custom-file-upload" *ngIf="maincards.length==0">
+    <input type="file" id="file" (change)="abrirDeck()"/>
+    Subir Archivo .ydk
+  </label>
+  <div id=result>
+    <div class="grid-container" *ngIf="maincards.length!=0">
+      <div class="card">
+        <img class="gran" *ngFor="let card of card; let i = index" [src]="card.card_images[0].image_url">
+      </div>
+      <div class="desc" *ngFor="let card of card; let i = index">
+        <div class="name">{{card.name}}</div>
+        {{card.desc}}
+      </div>
+      <div class="main">
+        <h1>Main: {{maincards.length}}</h1>
+        <div class="cardcont">
+          <img class="chica" (contextmenu)="deleteMain(maincards[i].id)" (click)="showMain(i)" *ngFor="let card of maincards; let i = index" [src]="maincards[i].card_images[0].image_url_small">
+        </div>
+      </div>
+      <div class="extra">
+        <h1>Extra: {{extracards.length}}</h1>
+        <div class="cardcont">
+          <img class="chica" (contextmenu)="deleteExtra(extracards[i].id)" (click)="showExtra(i)" *ngFor="let card of extracards; let i = index" [src]="extracards[i].card_images[0].image_url_small">
+        </div>
+      </div>
+      <div class="side">
+        <h1>Side: {{sidecards.length}}</h1>
+        <div class="cardcont">
+          <img class="chica" (contextmenu)="deleteSide(sidecards[i].id)"  (click)="showSide(i)" *ngFor="let card of sidecards; let i = index" [src]="sidecards[i].card_images[0].image_url_small">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
