@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button *ngIf="maincards.length!=0" (click)="export()">Export</ion-button>
+      <ion-button *ngIf="maincards.length!=0"><a id="descargar" (click)="initwrite()">Export</a></ion-button>
       <ion-button *ngIf="maincards.length!=0" (click)="add()">Add</ion-button>
     </ion-buttons>
     <ion-title>

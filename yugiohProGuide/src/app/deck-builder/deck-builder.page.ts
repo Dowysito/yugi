@@ -149,37 +149,7 @@ export class DeckBuilderPage implements OnInit {
         return false;
     }
 
-    async export() {
-            const alert = await this.alertController.create({
-                header: 'Export',
-                inputs: [
-                    {
-                        name: 'name',
-                        type: 'text',
-                        placeholder: 'name'
-                    }
-                ],
-                buttons: [
-                    {
-                        text: 'Cancel',
-                        role: 'cancel',
-                        cssClass: 'secondary',
-                        handler: () => {
-
-                        }
-                    }, {
-                        text: 'Confirm',
-                        handler: () => {
-                            this.initExport();
-                        }
-                    }
-                ]
-            });
-
-            await alert.present();
-        }
-
-    private initExport() {
-        write();
+    initwrite() {
+      write();
     }
 }

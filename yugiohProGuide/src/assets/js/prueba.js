@@ -1,6 +1,7 @@
 var main = [];
 var extra = [];
 var side = [];
+var string = "";
 
 function leer() {
     const file = document.getElementById('file').files[0];
@@ -46,7 +47,21 @@ function leer() {
 }
 
 function write() {
-    console.log(main)
-    var blob = new Blob(["This is my first text."], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "testfile1.txt");
+    console.log(main);
+    string = string + "#main\n"
+    for (let i = 0; i < main.length; i++) {
+        string = string + main[i] + "\n"
+    }
+    string = string + "#extra\n"
+    for (let i = 0; i < extra.length; i++) {
+        string = string + extra[i] + "\n"
+    }
+    string = string + "!side\n"
+    for (let i = 0; i < side.length; i++) {
+        string = string + side[i] + "\n"
+    }
+    var elem = document.getElementById('descargar');
+    elem.download = "deck.ydk";
+    elem.href = "data:application/octet-stream,"
+        + encodeURIComponent(string);
 }
